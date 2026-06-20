@@ -99,15 +99,29 @@ if section == "CLN6":
     CLN6 shows variation between groups, suggesting involvement in lysosomal dysfunction in disease.
     """)
 
-# =========================
-# Correlation
-# =========================
 if section == "Correlation":
+
     st.header("4. Gene Correlation Heatmap")
 
+    st.markdown("""
+    ### 📌 What does this mean?
+    - Positive values (close to +1) → genes move together
+    - Negative values (close to -1) → genes move in opposite directions
+    - Zero → no relationship
+    """)
+
+    corr = df[["TFEB", "SQSTM1", "CLN6"]].corr()
+
     fig, ax = plt.subplots()
-    sns.heatmap(df[["TFEB", "SQSTM1", "CLN6"]].corr(), annot=True, ax=ax)
+    sns.heatmap(corr, annot=True, cmap="coolwarm", ax=ax)
+
     st.pyplot(fig)
+
+    st.info("""
+    📌 Insight:
+    This heatmap shows how genes are biologically connected.
+    TFEB and SQSTM1 show opposite behavior, suggesting dysregulation in disease.
+    """)
 
     st.info("""
     📌 Insight:
