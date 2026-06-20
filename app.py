@@ -23,7 +23,7 @@ st.sidebar.title("🧬 Navigation")
 
 section = st.sidebar.radio(
     "Go to:",
-    ["Overview", "Dataset", "TFEB", "SQSTM1", "CLN6", "Correlation"]
+    ["Overview", "Dataset", "TFEB", "SQSTM1", "CLN6", "Correlation", "Summary"]
 )
 
 # =========================
@@ -134,3 +134,47 @@ if section == "Correlation":
     📌 Insight:
     Genes show correlated expression patterns, indicating coordinated disruption of lysosomal pathways in disease.
     """)
+
+if section == "Summary":
+
+    st.title("📌 Final Summary Report")
+
+    st.markdown("""
+    ## 🧬 Project Overview
+    This project analyzed gene expression data for three lysosomal pathway genes:
+    TFEB, SQSTM1, and CLN6 across Control and Disease samples.
+
+    The goal was to identify biological differences using data visualization techniques.
+    """)
+
+    st.markdown("""
+    ## 📊 Key Findings
+
+    ### 🔹 TFEB
+    - Decreased expression in disease samples
+    - Suggests reduced lysosomal biogenesis
+
+    ### 🔹 SQSTM1
+    - Increased expression in disease
+    - Indicates autophagy stress and waste accumulation
+
+    ### 🔹 CLN6
+    - Variable distribution between groups
+    - Suggests lysosomal dysfunction and instability
+    """)
+
+    st.markdown("""
+    ## 🔗 Correlation Insights
+    - TFEB and SQSTM1 show an inverse relationship
+    - Gene expression patterns are interconnected
+    - Suggests coordinated disruption of lysosomal pathway
+    """)
+
+    st.markdown("""
+    ## 🎯 Conclusion
+    The analysis indicates that disease samples show clear dysregulation in lysosomal pathway genes,
+    which may contribute to impaired cellular clearance and autophagy imbalance.
+    """)
+
+    st.success("✔ This dashboard successfully demonstrates basic bioinformatics data analysis using Python and Streamlit.")
+
