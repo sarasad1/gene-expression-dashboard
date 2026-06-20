@@ -88,7 +88,14 @@ if section == "SQSTM1":
 # CLN6
 # =========================
 if section == "CLN6":
+
     st.header("3. CLN6 Distribution")
+
+    st.markdown("""
+    ### 📌 What does this plot show?
+    This boxplot shows how CLN6 values are distributed in Control vs Disease groups.
+    It helps identify variability and abnormal expression levels.
+    """)
 
     fig, ax = plt.subplots()
     sns.boxplot(data=df, x="Group", y="CLN6", ax=ax)
@@ -96,7 +103,7 @@ if section == "CLN6":
 
     st.info("""
     📌 Insight:
-    CLN6 shows variation between groups, suggesting involvement in lysosomal dysfunction in disease.
+    CLN6 expression varies between groups, indicating possible disruption in lysosomal function and increased variability in disease samples.
     """)
 
 if section == "Correlation":
