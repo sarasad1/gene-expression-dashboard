@@ -176,5 +176,4 @@ if section == "Summary":
     which may contribute to impaired cellular clearance and autophagy imbalance.
     """)
 
-    st.success("✔ This dashboard successfully demonstrates basic bioinformatics data analysis using Python and Streamlit.")
 
